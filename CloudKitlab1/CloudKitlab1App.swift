@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
-
+import CloudKit
 @main
+
 struct CloudKitlab1App: App {
+    let container = CKContainer(identifier: "iCloud.me.CloudKitlab1")
+   // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+         //  SwiftUiView(vm : ItemListViewModel(container: CKContainer.default()))
+            ContentView(vm: ItemListViewModel(container: CKContainer.default()))
+           // ContentView2()
+             
         }
     }
 }
